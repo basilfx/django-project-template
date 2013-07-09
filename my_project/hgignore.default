@@ -1,0 +1,14 @@
+# Project files
+syntax: regexp
+^static/
+^media/
+
+syntax: glob
+settings/local.py
+
+# Python files
+*.pyc
+*.pyo
+
+# OS Files
+.DS_Store
