@@ -1,8 +1,10 @@
+from django.core.exceptions import ImproperlyConfigured
 from . import *
 
 # Default settings, overrides generic.py
 DEBUG                   = True
-TEMPLATE_DEBUG          = True 
+TEMPLATE_DEBUG          = True
+DEBUG_TOOLBAR           = True
 
 # Database settings
 DATABASES = {
@@ -14,3 +16,30 @@ DATABASES = {
         'HOST': ''
     }
 }
+
+# Load Django Debug Toolbar
+if DEBUG_TOOLBAR:
+    if not DEBUG:
+        raise ImproperlyConfigured("Django Debug Toolbar enabled while DEBUG is False")
+
+    # Order is important
+    INSTALLED_APPS     = INSTALLED_APPS + ('debug_toolbar', )
+    MIDDLEWARE_CLASSES = ('debug_toolbar.middleware.DebugToolbarMiddleware',) + MIDDLEWARE_CLASSES
+
+    DEBUG_TOOLBAR_CONFIG = {
+        'SHOW_TOOLBAR_CALLBACK': lambda x: True,
+        'INTERCEPT_REDIRECTS' : False,
+    }
+
+    DEBUG_TOOLBAR_PANELS = (
+        'debug_toolbar.panels.version.VersionDebugPanel',
+        'debug_toolbar.panels.timer.TimerDebugPanel',
+        'debug_toolbar.panels.cache.CacheDebugPanel',
+        'debug_toolbar.panels.settings_vars.SettingsVarsDebugPanel',
+        'debug_toolbar.panels.headers.HeaderDebugPanel',
+        'debug_toolbar.panels.request_vars.RequestVarsDebugPanel',
+        'debug_toolbar.panels.template.TemplateDebugPanel',
+        'debug_toolbar.panels.sql.SQLDebugPanel',
+        'debug_toolbar.panels.signals.SignalDebugPanel',
+        'debug_toolbar.panels.logger.LoggingPanel'
+    )
