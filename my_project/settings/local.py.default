@@ -1,7 +1,7 @@
 from django.core.exceptions import ImproperlyConfigured
-from . import *
+from my_project.settings import *
 
-# Default settings, overrides generic.py
+# Default settings, overrides settings in generic
 DEBUG                   = True
 TEMPLATE_DEBUG          = True
 DEBUG_TOOLBAR           = True
