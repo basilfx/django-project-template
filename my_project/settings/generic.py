@@ -1,23 +1,25 @@
 import os
 
-# Django settings for my_project project.
-
-DEBUG = False
-TEMPLATE_DEBUG = DEBUG
-
 # Directory paths based on current directory.
 CONF_DIR = os.path.abspath(os.path.dirname(__file__))
 BASE_DIR = os.path.abspath(os.path.join(CONF_DIR, "../"))
 
-ADMINS = (
+# Explicit default debug settings
+DEBUG = False
+TEMPLATE_DEBUG = DEBUG
+
+MANAGERS = ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
-
-MANAGERS = ADMINS
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = []
+
+# Test runner for discovering tests
+# See https://docs.djangoproject.com/en/dev/topics/testing/advanced/ for more
+# information.
+TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -124,7 +126,6 @@ INSTALLED_APPS = (
 
     # Third party
     'django_extensions',
-    'south',
 )
 
 # A sample logging configuration. The only tangible logging
