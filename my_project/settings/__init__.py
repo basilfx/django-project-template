@@ -1,1 +1,1 @@
-from my_project.settings.generic import *
+from my_project.settings.generic import *  # noqa

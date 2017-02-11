@@ -1,0 +1,15 @@
+# Project files
+syntax: regexp
+^my_project/static/
+^my_project/media/
+
+syntax: glob
+my_project/settings/local.py
+
+# Python files
+*.pyc
+*.pyo
+__pycache__
+
+# Other files
+.DS_Store

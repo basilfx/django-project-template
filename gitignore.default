@@ -1,0 +1,12 @@
+# Project files
+my_project/settings/local.py
+my_project/static/
+my_project/media/
+
+# Python files
+*.pyc
+*.pyo
+__pycache__
+
+# Other files
+.DS_Store

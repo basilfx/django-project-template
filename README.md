@@ -1,5 +1,5 @@
 # Django Project Template
-Project template to be used with Django 1.7 or later.
+Project template to be used with Django 1.10 or later.
 
 ## Features
 * Split configuration (generic and local settings)
@@ -9,8 +9,5 @@ Project template to be used with Django 1.7 or later.
   * Django Debug Toolbar
   * Django Extensions
 
-## TODO
-* Make it work with `django-admin.py startproject`
-
 ## License
-No license
+WTFPL. See the `LICENSE.md` file.
