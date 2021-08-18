@@ -2,11 +2,8 @@
 my_project/settings/local.py
 my_project/static/
 my_project/media/
+my_project/db.sqlite3
 
 # Python files
-*.pyc
-*.pyo
-__pycache__
-
-# Other files
-.DS_Store
+__pycache__/
+env/
